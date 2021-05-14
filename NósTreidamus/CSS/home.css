@@ -1,0 +1,207 @@
+/* INICIO CSS GERAL */
+body,
+html {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(239, 239, 239);
+}
+
+
+.corpo_geral {
+    width: 100%;
+    height: 100%;
+}
+/* FIM CSS GERAL  */
+
+
+
+/* INICIO CSS CABECALHO */
+.corpo_cabecalho {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 6.5vw;
+    background-color: rgb(0, 24, 57, 0.9);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom: solid 4px tomato;
+}
+
+
+.caixa_cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    color: white;
+}
+
+
+.logo_cabecalho {
+    width: 150px;
+}
+
+
+.logo_cabecalho {
+    text-decoration: none;
+    color: white;
+    font-size: 2.5vw;
+    width: 25%;
+}
+.img_tradamus {
+    width: 4.5vw;
+    float: left;
+    margin-right: 0.7vw;
+}
+.logo_cabecalho span {
+    text-decoration: none;
+    font-size: 2.5vw;
+    color: tomato;
+}
+.ajuste_logo {
+    padding: 0.5vw;
+}
+
+
+.caixa_menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+}
+.cabecalho_menu {
+    font-weight: 900;
+    margin-left: 8vw;
+}
+ul {
+    list-style: none;
+    display: flex;
+    font-size: 1.5vw;
+}
+ul li a {
+    color: white;
+    margin-left: 2.5vw;
+    text-decoration: none;
+
+}
+ul li a:hover {
+    color: rgba(255, 99, 71, 0.90);
+    transition: 0.3s;
+}
+
+
+.button_cabecalho {
+    height: 2.5vw;
+    width: 10vw;
+    background-color: rgba(255, 99, 71);
+    margin-right: 1vw;
+    font-size: 1.5vw;
+    border-radius: 20px;
+}
+.button_cabecalho a {
+    text-decoration: none;
+    color: white;
+}
+.button_cabecalho:hover {
+    background-color: rgba(255, 99, 71, 0.70);
+    border-radius: 20px;
+    transition: 0.3s;
+}
+/* FIM CSS CABECALHO */
+
+
+
+/* INICIO CSS CONTEUDO */
+.caixa_conteudo_1 {
+    width: 100%;
+    height: 500px;
+    padding-top: 200px;
+    position: relative;
+}
+.conteudo_1_1 {
+    width: 45%;
+    height: 100%;
+    float: left;
+    left: 5%;
+    position: relative;
+}
+.titulo_1 {
+    font-size: 2.5vw;
+    padding: 2vw 0;
+}
+.paragrafo_1_1 {
+    font-size: 1.5vw;
+    padding: 2vw 0;
+}
+.paragrafo_1_2 {
+    font-size: 1.5vw;
+    padding: 2vw 0;
+    font-weight: 900;
+}
+.conteudo_1_2 {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    float: right;
+    right: 5%;
+}
+.imagem_conteudo_1 {
+    border-radius: 20px;
+    width: 100%;
+    height: 80%;
+}
+
+
+.caixa_conteudo_2 {
+    width: 100%;
+    height: 500px;
+    padding-top: 100px;
+    position: relative;
+    background: rgb(205 205 205 / 50%);
+}
+.conteudo_2_1 {
+    width: 45%;
+    height: 100%;
+    float: right;
+    right: 5%;
+    position: relative;
+}
+.titulo_2 {
+    font-size: 2.5vw;
+    padding: 2vw 0;
+}
+.paragrafo_2_1 {
+    font-size: 1.5vw;
+    padding: 2vw 0;
+}
+.paragrafo_2_2 {
+    font-size: 1.5vw;
+    padding: 2vw 0;
+    font-weight: 900;
+}
+.conteudo_2_2 {
+    width: 40%;
+    height: 100%;
+    float: left;
+    left: 5%;
+    position: relative;
+}
+.imagem_conteudo_2 {
+    border-radius: 20px;
+    width: 100%;
+    height: 80%;
+}
+/* FIM CSS CONTEUDO */
+
+
+/* INICIO CSS RODAPÉ */
+
+/* FIM CSS RODAPÉ */
+.corpo_rodape {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(0, 24, 57, 0.9);
+}
