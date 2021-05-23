@@ -26,6 +26,9 @@ html {
     border-bottom-right-radius: 50px;
     border-bottom: solid 4px tomato;
 }
+.corpo_conteudo {
+    width: 100%;
+}
 .caixa_cabecalho {
     display: flex;
     justify-content: space-between;
@@ -35,7 +38,7 @@ html {
     color: white;
 }
 .logo_cabecalho {
-    width: 150px;
+    width: 10vw;
 }
 .logo_cabecalho {
     text-decoration: none;
@@ -60,7 +63,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 75%;
+    width: 70%;
 }
 .cabecalho_menu {
     font-weight: 900;
@@ -115,10 +118,15 @@ ul li a:hover {
     position: relative;
     text-align: center;
     width: 100%;
-    height: 150px;
+    height: 9vw;
     background-color: rgb(0, 24, 57, 0.9);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+}
+.caixa_rodape {
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
 .ajuste_rodape {
     margin-top: 1vw;

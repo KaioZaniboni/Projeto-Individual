@@ -6,70 +6,100 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/geral.css">
-    <link rel="stylesheet" href="CSS/conteudo.css">
+    <link rel="stylesheet" href="css/cadastro_login.css">
     <title>Document</title>
 </head>
 
 <body>
-    <div class="corpo_geral">
 
-        <div class="corpo_cabecalho">
-            <div class="caixa_cabecalho">
-                <a class="logo_cabecalho" href="index.html">
-                    <img class="img_tradamus" src="Imagens/tradamus.png" alt="">
-                    <div class="ajuste_logo"> <span>Nós</span>Treidamos</div>
-                </a>
-                <nav class="caixa_menu">
-                    <ul class="cabecalho_menu">
-                        <li><a href="index.html"> Home</a></li>
-                        <li><a href="sobre.html"> Sobre Nós </a></li>
-                        <li><a href="conteudo.html"> Conteúdo </a></li>
-                        <li><a href=""> Contato </a></li>
-                    </ul>
-                    <ul class="cabecalho_button">
-                        <button class="button_cabecalho"><a href="login.html"> Entrar </a></button>
-                        <button class="button_cabecalho"><a href="cadastro.html"> Cadastre-se </a></button>
-                    </ul>
-                </nav>
+
+
+    <div class="corpo_cadastro_login">
+
+        <div class="menus">
+            <div id="menu_login" class="login">
+                <div class="caixa_menu_cadastro_login">
+                    <div class="titulo_cadastro">Bem Vindo!</div>
+                    <div class="texto_menu">
+                        para se conectar conosco, faça o login com suas informações deusuário
+                    </div>
+                    <button class="button_menu" onclick="sign_in()">Login</button>
+                </div>
+            </div>
+
+            <div id="menu_cadastro" class="cadastro">
+                <div class="caixa_menu_cadastro_login">
+                    <div class="titulo_cadastro">Ola!</div>
+                    <div class="texto_menu">
+                        Insira os seus dados pessoais e comece a sua jornada conosco
+                    </div>
+                    <button class="button_menu" onclick="sign_up()">Cadastre-se</button>
+                </div>
             </div>
         </div>
 
-        <div class="corpo_conteudo">
-
-            <form id="form_login" method="post" onsubmit="return entrar()">
-                Usuário:
-                <input type="text" class="input-padrao" name="login">
-                <br>
-                Senha:
-                <input type="password" class="input-padrao" name="senha">
-                <br>
-                <button id="btn_entrar" class="btn-green">Entrar</button>
+        <div id="formulario_login" class="caixa_login">
+            <div class="titulo_login">Faça o seu login</div>
+            <form id="form_login" class="form_login" method="post" onsubmit="return entrar()">
+                <div class="ajuste_login_1">Usuário:<input type="text" name="login" placeholder="Digite seu e-mail de usuário"></div>
+                <div class="ajuste_login_2">Senha:<input type="password" name="senha" placeholder="***************"></div>
+                <div class="ajuste_login_3">Esqueceu a sua senha?</div>
+                <button id="btn_entrar" class="button_login">Entrar</button>
             </form>
 
             <div class="extra">
                 <div id="div_erro" class="msg_erro">
                 </div>
-
-                <img src="aguarde-orange.gif" id="img_aguarde">
-                <!--style="display: none;"-->
+                <img src="" id="img_aguarde">
             </div>
-
-
-
-            <div class="corpo_rodape">
-                <div class="caixa_rodape">
-                    <img class="img_rodape" src="Imagens/tradamus.png" alt="">
-                    <div class="ajuste_rodape">
-                        ©NósTreidamos 2021. Todos direitos reservados.
-                    </div>
-                </div>
-            </div>
-
         </div>
+
+        <div id="formulario_cadastro" class="caixa_cadastro">
+            <div class="titulo_login">Faça o seu cadastro</div>
+            <form id="form_cadastro" class="form_cadastro" method="post" onsubmit="return cadastrar()">
+                <div class="input_nome">Nome completo:<input type="text" name="nome" autofocus="autofocus"
+                        placeholder="Nome e sobrenome" required minlength="4"></div>
+                <div class="input_email">E-mail:<input type="text" name="login"  placeholder="Digite seu e-mail de usuário"
+                        required minlength="4"></div>
+                <div class="input_senha">Senha:<input type="password" name="senha" placeholder="***************" required
+                        minlength="4"></div>
+                <div class="input_senha">Confirme sua Senha:<input type="password" name="senha"
+                        placeholder="***************" required minlength="4"></div>
+                <input type="submit" id="btn_cadastrar" value="Cadastrar" class="button_login">
+            </form>
+            <img src="" id="img_aguarde" style="display: none; width:100px">
+            <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+                Erro no cadastro
+            </div>
+        </div>
+
+    </div>
+
 </body>
 
 </html>
 <script>
+    var login_menu = document.getElementById('menu_login');
+    var cadastro_menu = document.getElementById('menu_cadastro');
+    var login_formulario = document.getElementById('formulario_login');
+    var cadastro_formulario = document.getElementById('formulario_cadastro');
+
+
+    function sign_up() {
+        login_menu.style = 'display: block;';
+        cadastro_menu.style = 'display: none;';
+        login_formulario.style = 'display: none;';
+        cadastro_formulario.style = 'display: block;';
+    }
+
+    function sign_in() {
+        login_menu.style = 'display: none;';
+        cadastro_menu.style = 'display: block;';
+        login_formulario.style = 'display: block;';
+        cadastro_formulario.style = 'display: none;';
+    }
+
+
 
     function entrar() {
         aguardar();
@@ -116,4 +146,41 @@
         div_erro.innerHTML = resposta;
     }
 
-</script>
+
+//     function cadastrar() {
+//         aguardar();
+//         var formulario = new URLSearchParams(new FormData(form_cadastro));
+//         fetch("/usuarios/cadastrar", {
+//             method: "POST",
+//             body: formulario
+//         }).then(function (response) {
+
+//             if (response.ok) {
+
+//                 window.location.href = 'login.html';
+
+//             } else {
+
+//                 console.log('Erro de cadastro!');
+//                 response.text().then(function (resposta) {
+//                     div_erro.innerHTML = resposta;
+//                 });
+//                 finalizar_aguardar();
+//             }
+//         });
+
+//         return false;
+//     }
+
+//     function aguardar() {
+//         btn_cadastrar.disabled = true;
+//         img_aguarde.style.display = 'block';
+//         div_erro.style.display = 'none';
+//     }
+
+//     function finalizar_aguardar() {
+//         btn_cadastrar.disabled = false;
+//         img_aguarde.style.display = 'none';
+//         div_erro.style.display = 'block';
+//     }
+// </script>

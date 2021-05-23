@@ -22,10 +22,10 @@
 /* INICIO CSS CONTEUDO 2 */
 .caixa_conteudo_2 {
     width: 100%;
-    height: 500px;
+    height: 32vw;
+    padding: 2vw 0;
     position: relative;
     background: rgb(205 205 205 / 50%);
-    padding: 30px 0;
 }
 .conteudo_2_1 {
     width: 45%;
@@ -67,7 +67,7 @@
 /* INICIO CSS CONTEUDO 3 */
 .caixa_conteudo_3 {
     width: 100%;
-    height: 500px;
+    height: 32vw;
     position: relative;
     background: rgb(205 205 205 / 50%);
 }
@@ -111,10 +111,9 @@
 /* INICIO CSS CONTEUDO 4 */
 .caixa_conteudo_4 {
     width: 80%;
-    height: 500px;
+    height: 32vw;
     position: relative;
-    padding: 100px 0;
-    width: 80%;
+    padding: 6vw 0;
     margin: auto;
 }
 .conteudo_4_1 {
