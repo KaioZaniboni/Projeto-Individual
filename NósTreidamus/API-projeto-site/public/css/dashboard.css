@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+/* CABEÇALHO */
+.corpo_menu {
+    background-color: rgb(0, 24, 57, 0.9);
+    border-right: 3px solid orangered;
+    width: 5%;
+    height: 100%;
+    position: fixed;
+}
+.imagens_menu {
+    width: 3vw;
+    margin: 1.5vw 1vw;
+}
+.usuario {
+    width: 75%;
+    overflow: hidden;
+    margin: auto;
+    text-align: center;
+}
+.usuario h2 {
+    font-weight: 100;
+}
+/* FIM CABEÇALHO */
+
+/* INICIO CONTEUDO */
+.corpo_conteudo {
+    position: relative;
+    float: right;
+    width: 95%;
+}
+
+
+.corpo_cabecalho {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    border: solid ;
+}
+
+/* INICIO CSS CONTEUDO 1 */
+.conteudo_1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 8vw;
+    width: 100%;
+    bottom: 0%;
+    padding: 1vw 0vw;
+    border: solid;
+}
+.display_ativo {
+    position: relative;
+    height: 7vw;
+    width: 14%;
+    border: solid 1px white;
+    margin: 0 5px;
+    background-color: rgb(0, 24, 57, 0.9);
+    border-radius: 20px;
+}
+.porcentagem_ativo_1 {
+    color: green;
+}
+.porcentagem_ativo_2 {
+    color: red;
+}
+.porcentagem_ativo_3 {
+    color: red;
+}
+.porcentagem_ativo_4 {
+    color: green;
+}
+.porcentagem_ativo_5 {
+    color: green;
+}
+.seta_direita {
+    width: 3vw;
+    height: 4vw;
+    margin: 2vw 2vw;
+    cursor: pointer;
+}
+.seta_esquerda {
+    width: 3vw;
+    height: 4vw;
+    margin: 2vw 2vw;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+.display_linha_1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 1vw;
+    font-size: 1.2vw;
+}
+.display_linha_2 {
+    text-align: left;
+    margin-left: 1vw;
+    font-size: 1.5vw;
+}
+.display_linha_3 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1vw;
+    font-size: 0.9vw;
+    color: rgb(150, 150, 150);
+}
+
+.conteudo_2 {
+    text-align: center;
+    padding: 1vw 0vw;
+}
+
+.conteudo_3 {
+    width: 100%;
+    height: 200px;
+    margin: 2vw 0vw;
+    border: solid;
+}
+/* FIM CSS CONTEUDO 1 */

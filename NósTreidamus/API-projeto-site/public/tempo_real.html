@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto IoT - Tempo Real</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <!-- script do google charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="funcoes.js"></script>
+</head>
+
+<body onload="atualizacaoPeriodica()">
+    <!--header inicio-->
+
+    <div class="corpo_menu">
+        <div class="container">
+            <img class="imagens_menu" src="Imagens/tradamus.png">
+            <img class="imagens_menu" src="Imagens/home.png">
+            <img class="imagens_menu" src="Imagens/historico.png">
+            <img class="imagens_menu" src="Imagens/forum.png">
+            <img class="imagens_menu" src="Imagens/configuracoes.png">
+            <a href="#" onclick="logoff()"><img class="imagens_menu" src="Imagens/sair.png"></a>
+        </div>
+    </div>
+    </div>
+    <!--header fim-->
+    <div class="corpo_conteudo">
+
+        <div class="corpo_cabecalho">
+            <div>
+                <div class="usuario">
+                    <h2>Olá, <b id="b_usuario"></b></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="conteudo_1">
+            <img class="seta_esquerda" src="Imagens/seta_branca.png" alt="seta para a esquerda">
+            <div class="display_ativo">
+                <div class="display_linha_1">
+                    <div>BITCOIN</div>
+                    <div class="porcentagem_ativo_1">3.47%</div>
+                </div>
+                <div class="display_linha_2">R$ 266.050,00</div>
+                <div class="display_linha_3">
+                    <div>Volume 24h</div>
+                    <div>19,03</div>
+                </div>
+            </div>
+            <div class="display_ativo">
+                <div class="display_linha_1">
+                    <div>BBSA3</div>
+                    <div class="porcentagem_ativo_2">4.89%</div>
+                </div>
+                <div class="display_linha_2">R$ 27,14</div>
+                <div class="display_linha_3">
+                    <div>Volume 24h</div>
+                    <div>34,59</div>
+                </div>
+            </div>
+            <div class="display_ativo">
+                <div class="display_linha_1">
+                    <div>VALE5</div>
+                    <div class="porcentagem_ativo_3">0.31%</div>
+                </div>
+                <div class="display_linha_2">R$ 13,15</div>
+                <div class="display_linha_3">
+                    <div>Volume 24h</div>
+                    <div>2,09</div>
+                </div>
+            </div>
+            <div class="display_ativo">
+                <div class="display_linha_1">
+                    <div>PETR4</div>
+                    <div class="porcentagem_ativo_4">1.18%</div>
+                </div>
+                <div class="display_linha_2">R$ 23,86</div>
+                <div class="display_linha_3">
+                    <div>Volume 24h</div>
+                    <div>27,53</div>
+                </div>
+            </div>
+            <div class="display_ativo">
+                <div class="display_linha_1">
+                    <div>ZANI3</div>
+                    <div class="porcentagem_ativo_5">6.29%</div>
+                </div>
+                <div class="display_linha_2">R$ 36,36</div>
+                <div class="display_linha_3">
+                    <div>Volume 24h</div>
+                    <div>21,11</div>
+                </div>
+            </div>
+            <img class="seta_direita" src="Imagens/seta_branca.png" alt="seta para a direita">
+        </div>
+
+        <div class="conteudo_2">
+            <canvas id="canvasGrafico"></canvas>
+        </div>
+
+        <div class="conteudo_3">
+            <div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+
+<script>
+    var canvas = document.getElementById("canvasGrafico");
+    if (canvas) {
+        //altura da canvas
+        var altura = 300;
+        //largura da canvas
+        var largura = 1200;
+        //posição horizontal inicial do gráfico
+        var x = 0;
+        //valor dos pontos do gráfico, que será alterado aleatoriamente
+        var valor;
+
+        //formatando a canvas
+        canvas.setAttribute("width", largura);
+        canvas.setAttribute("height", altura);
+
+        //obtendo o contexto 2d
+        var ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "lime";
+        ctx.fillRect(0, 0, largura, altura);
+        ctx.font = "40px Courier";
+
+        function desenharGrafico() {
+            //define o avanço horizontal
+            x += 20;
+            //gera um valor aleatório entre 0 e o valor estipulado 
+            valor = parseInt(Math.random() * 250);
+            //desenha uma linha até a posição gerada
+            ctx.lineTo(x, altura - valor);
+            ctx.lineWidth = 5,
+                ctx.stroke();
+            //desenha um retangulo onde está sendo escrito o valor do gráfico
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, largura, 30);
+            //desenha o texto indicando o valor do gráfico, na posição horizontal atual
+            ctx.fillStyle = "red";
+            ctx.fillText(valor, x, 30);
+        }
+
+        setInterval(desenharGrafico, 1000);
+    }
+
+
+
+
+    var usuario;
+
+    verificar_autenticacao();
+
+    // só mexer se quiser alterar o tempo de atualização
+    // ou se souber o que está fazendo!
+
+    function atualizacaoPeriodica() {
+        obterdadosporcaminhao(1);
+        obterdadosporcaminhao(2);
+        obterdadosporcaminhao(3);
+        obterdadosporcaminhao(4);
+        // setTimeout(atualizacaoPeriodica, 5000);
+    }
+
+
+
+    function obterdadosporcaminhao(idcaminhao) {
+        //aguardar();
+        fetch(`/leituras/tempo-real/${idcaminhao}`)
+            .then(resposta => {
+
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        // aqui, após registro. use os nomes
+                        // dos atributos que vem no JSON
+                        var dados = {
+                            temperatura: resposta.temperatura,
+                            umidade: resposta.umidade
+                        }
+
+                        alertar(resposta.temperatura, resposta.umidade, idcaminhao);
+                        atualizarTela(dados, idcaminhao);
+                    });
+                } else {
+
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do caminhao p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function alertar(temperatura, umidade, idcaminhao) {
+        // padrão para meu alerta
+        var limites = {
+            max_temperatura: 40,
+            min_temperatura: 20,
+            max_umidade: 80,
+            min_umidade: 50,
+        };
+
+        // zerar aviso de mensagem
+        var mensagem_temperatura = '';
+        var mensagem_umidade = '';
+        var classe_temperatura = 'alerta';
+        var classe_umidade = 'alerta_umidd';
+
+        // comparando
+        if (temperatura > limites.max_temperatura) {
+            mensagem_temperatura += 'Temperatura alta demais! <br>';
+            classe_temperatura = 'alerta alerta-alto';
+        }
+        if (umidade > limites.max_umidade) {
+            mensagem_umidade += 'Umidade alta demais! <br>';
+            classe_umidade = 'alerta_umidd alerta-alto';
+        }
+        if (temperatura < limites.min_temperatura) {
+            mensagem_temperatura = 'Temperatura baixa demais! <br>';
+            classe_temperatura = 'alerta alerta-baixo';
+        }
+        if (umidade < limites.min_umidade) {
+            mensagem_umidade = 'Umidade baixa demais! <br>';
+            classe_umidade = 'alerta_umidd alerta-baixo';
+        }
+
+        // escolhendo qual alterar
+        var div_temperatura_alterar
+        var div_umidade_alterar
+
+        if (idcaminhao == 1) {
+            div_temperatura_alterar = div_alerta_temperatura
+            div_umidade_alterar = div_alerta_umidade
+        } else if (idcaminhao == 2) {
+            div_temperatura_alterar = div_alerta_temperatura2
+            div_umidade_alterar = div_alerta_umidade2
+        } else if (idcaminhao == 3) {
+            div_temperatura_alterar = div_alerta_temperatura3
+            div_umidade_alterar = div_alerta_umidade3
+        } else if (idcaminhao == 4) {
+            div_temperatura_alterar = div_alerta_temperatura4
+            div_umidade_alterar = div_alerta_umidade4
+        }
+
+        // alterando
+        div_temperatura_alterar.innerHTML = mensagem_temperatura;
+        div_temperatura_alterar.className = classe_temperatura;
+
+        div_umidade_alterar.innerHTML = mensagem_umidade;
+        div_umidade_alterar.className = classe_umidade;
+    }
+
+    // só altere aqui se souber o que está fazendo!
+    function atualizarTela(dados, idcaminhao) {
+        console.log('iniciando atualização da tela...');
+
+        // escolhendo qual alterar
+        var div_temperatura_alterar
+        var div_umidade_alterar
+
+        if (idcaminhao == 1) {
+            div_temperatura_alterar = div_temperatura
+            div_umidade_alterar = div_umidade
+        } else if (idcaminhao == 2) {
+            div_temperatura_alterar = div_temperatura2
+            div_umidade_alterar = div_umidade2
+        } else if (idcaminhao == 3) {
+            div_temperatura_alterar = div_temperatura3
+            div_umidade_alterar = div_umidade3
+        } else if (idcaminhao == 4) {
+            div_temperatura_alterar = div_temperatura4
+            div_umidade_alterar = div_umidade4
+        }
+
+        div_temperatura_alterar.innerHTML = `Temperatura: ${dados.temperatura}º`;
+
+        div_umidade_alterar.innerHTML = `Umidade: ${dados.umidade}%`;
+
+
+
+    }
+
+
+    function sendData() {
+        var http = new XMLHttpRequest();
+        http.open('GET', 'http://localhost:9001/api/sendData', false);
+        http.send(null);
+    }
+
+    // Descomente abaixo se quiser inserir dados a cada X segundos
+
+    // setInterval(() => {
+    //     sendData();
+    // }, 5000);
+</script>
