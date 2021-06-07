@@ -1,0 +1,201 @@
+/* INICIO CSS GERAL */
+body,
+html {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(239, 239, 239);
+}
+
+.corpo_geral {
+    width: 100%;
+    height: 100%;
+}
+
+/* FIM CSS GERAL  */
+
+
+
+/* INICIO CSS CABECALHO */
+.corpo_cabecalho {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 6.5vw;
+    background-color: rgb(0, 24, 57, 0.9);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom: solid 4px tomato;
+    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
+}
+.corpo_conteudo {
+    width: 100%;
+}
+.caixa_cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    color: white;
+}
+.logo_cabecalho {
+    width: 10vw;
+}
+.logo_cabecalho {
+    text-decoration: none;
+    color: white;
+    font-size: 2.5vw;
+    width: 25%;
+}
+.img_tradamus {
+    width: 4.5vw;
+    float: left;
+    margin-right: 0.7vw;
+}
+.logo_cabecalho span {
+    text-decoration: none;
+    font-size: 2.5vw;
+    color: tomato;
+}
+.ajuste_logo {
+    padding: 0.5vw;
+}
+.caixa_menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+.cabecalho_menu {
+    font-weight: 900;
+    margin-left: 2vw;
+}
+ul {
+    list-style: none;
+    display: flex;
+    font-size: 1.5vw;
+}
+ul li a {
+    color: white;
+    margin-left: 2.5vw;
+    text-decoration: none;
+}
+ul li a:hover {
+    color: rgba(255, 99, 71, 0.90);
+    transition: 0.3s;
+}
+.button_cabecalho {
+    height: 2.5vw;
+    width: 10vw;
+    background-color: rgba(255, 99, 71);
+    margin-right: 1vw;
+    font-size: 1.5vw;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.button_cabecalho a {
+    text-decoration: none;
+    color: white;
+}
+.button_cabecalho:hover {
+    background-color: rgba(255, 99, 71, 0.70);
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.pagina_atual {
+    color: tomato;
+}
+.usuario {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    font-size: 1.5vw;
+}
+.imagens_menu {
+    width: 3vw;
+    margin: 1.5vw 1vw;
+}
+.drop_down {
+    width: 3vw;
+    margin: 1.5vw 1vw;
+    cursor: pointer;
+}
+.imagem_perfil {
+    border: solid 1px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
+}
+
+
+
+.dropbtn {
+    color: white;
+    border: none;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    box-shadow: 0 0 4px 4px rgb(255 255 255 / 35%);
+    border-radius: 50px;
+}
+/* FIM CSS CABECALHO */
+
+
+
+
+
+
+/* INICIO CSS RODAPÉ */
+
+/* FIM CSS RODAPÉ */
+.corpo_rodape {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 9vw;
+    background-color: rgb(0, 24, 57, 0.9);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
+}
+
+.caixa_rodape {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.ajuste_rodape {
+    margin-top: 1vw;
+    color: white;
+}
+
+.img_rodape {
+    width: 3.5vw;
+    margin-top: 2vw;
+}

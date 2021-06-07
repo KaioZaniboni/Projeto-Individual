@@ -1,0 +1,251 @@
+.corpo_login {
+    padding: 150px;
+}
+
+.corpo_cadastro_login {
+    position: relative;
+    margin: auto;
+    height: 30vw;
+    width: 50vw;
+    border-radius: 50px;
+    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
+}
+.menus {
+    position: absolute;
+    height: 100%;
+    width: 20vw;
+    border-radius: 50px;
+    background-color: rgb(0, 24, 57, 0.9);
+}
+.login {
+    height: 100%;
+    width: 20vw;
+    display: none;
+}
+.cadastro {
+    height: 100%;
+    width: 20vw;
+    display: block;
+}
+.caixa_menu_cadastro_login {
+    position: relative;
+    margin: auto;
+    font-size: 1.5vw;
+    height: 60%;
+    width: 80%;
+    color: white;
+    top: 20%;  
+}
+.titulo_cadastro {
+    margin: 2vw;
+}
+.texto_menu {
+    margin: 1vw;
+}
+.button_menu {
+    margin: 2vw 3vw;
+    font-size: 1.3vw;
+    height: 3vw;
+    width: 10vw;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.caixa_login {
+    position: absolute;
+    display: block;
+    right: 0;
+    height: 100%;
+    width: 30vw;
+}
+.form_login {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    top: 10%;
+    height: 60%;
+    width: 75%;
+    font-size: 1.5vw;
+}
+.titulo_login {
+    text-align: center;
+    font-size: 2.5vw;
+    margin: 2vw;
+}
+.ajuste_login_1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.7vw;
+}
+.ajuste_login_2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.7vw;
+}
+.ajuste_login_3 {
+    margin: 2.7vw 0 1vw 0;
+    font-size: 1vw;
+}
+.button_login {
+    margin: 1vw;
+    font-size: 1.3vw;
+    height: 3vw;
+    width: 10vw;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+.caixa_cadastro {
+    position: absolute;
+    display: none;
+    right: 0;
+    height: 100%;
+    width: 30vw;
+}
+.form_cadastro {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    top: 10%;
+    height: 60%;
+    width: 85%;
+    font-size: 1.3vw;
+}
+.input_nome {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.3vw 0;
+}
+.input_email {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.3vw 0;
+}
+.input_senha {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5vw 0;
+}
+input {
+    width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* PÁGINA DO CONTATO */
+
+.contato {
+    background-color: #ecf0f1;
+}
+
+.contato .container {
+    overflow: auto;
+}
+
+.contato h1 {
+    padding: 40px 0;
+}
+
+.formulario {
+    float: left;
+    width: 500px;
+}
+
+form label, form p{
+    display: block;
+    font-size: 20px;
+    margin-bottom:10px ;
+}
+
+.btn-green {
+    color: white;
+    background-color: green;
+    margin: 20px 0 50px 0;
+    border: 0;
+    padding: 10px 20px;
+
+    border-radius: 5px;
+    float: left;
+    cursor: pointer;
+}
+
+.imagem-lateral {
+    overflow: auto;
+}
+
+.contato img {
+    float: right;
+    width: 85%;
+}
+
+.input-padrao {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px 25px;
+    width: 90%;
+
+    border-radius: 5px;
+    border: solid 1px #bbbbbb;
+}
+
+.div-radio {
+    margin-bottom: 30px;
+}
+
+/* PÁGINA DO LOGIN */
+
+.pag-login {
+    background-color: #ecf0f1;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.pag-login h1 {
+    margin-bottom: 40px;
+}
+
+.pag-login .input-padrao {
+    width: 50%;
+    display: inline-block;
+}
+
+.box-login {
+    display: inline-block;
+    background-color: white;
+    box-shadow:  3px 3px 5px 2px #ccc;
+    padding: 60px 20px 0px 20px;
+    border-radius: 20px;
+    width: 400px;
+}
+
+.pag-login .btn-green {
+    display: block;
+    float: none;
+    margin: auto;
+}
+
+/* EXTRA */
+
+.extra {
+    margin: 10px;
+}
+
+.extra img {
+  height: 50px;
+   visibility: hidden;
+}
+
+.extra .msg_erro {
+    background-color: sandybrown; 
+    color: black; 
+    visibility: hidden;
+}

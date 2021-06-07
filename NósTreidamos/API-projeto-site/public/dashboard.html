@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto IoT - Tempo Real</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"
+        integrity="sha512-dnUg2JxjlVoXHVdSMWDYm2Y5xcIrJg1N+juOuRi0yLVkku/g26rwHwysJDAMwahaDfRpr1AxFz43ktuMPr/l1A=="
+        crossorigin="anonymous"></script>
+    <!-- script do google charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="funcoes.js"></script>
+</head>
+
+<body onload="atualizacaoPeriodica()">
+    <!--header inicio-->
+
+    <div class="corpo_menu">
+        <div class="container">
+            <img class="imagens_menu" src="Imagens/tradamus.png">
+            <div class="separacao">
+                <a href="dashboard.html"><img class="imagens_menu" src="Imagens/home.png"></a>
+                <a href="ativos.html"><img class="imagens_menu" src="Imagens/historico.png"></a>
+                <a href="publicacoes.html"><img class="imagens_menu" src="Imagens/forum.png"></a>
+                <a href="config_conta.html"><img class="imagens_menu" src="Imagens/conta.png"></a>
+                <a href="#" onclick="logoff()"><img class="imagens_menu" src="Imagens/sair.png"></a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--header fim-->
+    <div class="corpo_conteudo">
+
+        <div class="corpo_cabecalho">
+
+            <div class="usuario">
+                <img class="imagens_menu imagem_perfil" src="Imagens/sem foto.png">
+                <div>Olá, <b id="b_usuario"></b></div>
+            </div>
+
+            <div class="conteudo_1">
+                <div class="display_ativo">
+                    <div class="display_linha_1">
+                        <div>Total analises já feitas:</div>
+                    </div>
+                    <div class="display_linha_2">347</div>
+                    <div class="display_linha_3">
+                    </div>
+                </div>
+                <div class="display_ativo">
+                    <div class="display_linha_1">
+                        <div>Positivas:</div>
+                        <div class="porcentagem_ativo_2">4.89%</div>
+                    </div>
+                    <div class="display_linha_2">27</div>
+                    <div class="display_linha_3">
+                    </div>
+                </div>
+                <div class="display_ativo">
+                    <div class="display_linha_1">
+                        <div>Negativas:</div>
+                        <div class="porcentagem_ativo_3">31%</div>
+                    </div>
+                    <div class="display_linha_2">13</div>
+                    <div class="display_linha_3">
+                    </div>
+                </div>
+                <div class="display_ativo">
+                    <div class="display_linha_1">
+                        <div>Empates:</div>
+                        <div class="porcentagem_ativo_4">18%</div>
+                    </div>
+                    <div class="display_linha_2">23</div>
+                    <div class="display_linha_3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="conteudo_2">
+                <canvas id="chart"></canvas>
+            </div>
+
+            <div class="conteudo_3">
+                <div class="titulo_recomendacao">Artigos Recomendados</div>
+
+                <div class="caixa_recomendacoes_1">
+                    <div class="recomendacoes">
+                        <img class="imagens_artigos" src="Imagens/sugestao.png">
+
+                        <div class="texto_artigo">
+                            Saiba como identificar os padrões corretamente,
+                            não caia mais em armadilhas com formações de figuras incorretas!
+                        </div>
+                        <div class="saiba_mais">
+                            <div class="ajuste_saiba_mais"><a href="artigo1.html">Saiba mais &rarr;</a></div>
+                        </div>
+
+                    </div>
+                    <div class="recomendacoes">
+                        <img class="imagens_artigos" src="Imagens/artigo6.png">
+                        <div class="texto_artigo">
+                            Com a queda da Selic, muitas pessoas buscam novas opções de investimento.
+                            Entenda como começar a investir em Ações respeitando seu perfil e seus objetivos!
+                        </div>
+                        <div class="saiba_mais">
+                            <div class="ajuste_saiba_mais"><a href="">Saiba mais &rarr;</a></div>
+                        </div>
+                    </div>
+                    <div class="recomendacoes">
+                        <img class="imagens_artigos" src="Imagens/artigo5.png">
+                        <div class="texto_artigo">
+                            Com a queda da Selic, muitas pessoas buscam novas opções de investimento.
+                            Entenda como começar a investir em Ações respeitando seu perfil e seus objetivos!
+                        </div>
+                        <div class="saiba_mais">
+                            <div class="ajuste_saiba_mais"><a href="">Saiba mais &rarr;</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="caixa_recomendacoes_2">
+                    <div class="recomendacoes">
+                        <img class="imagens_artigos" src="Imagens/artigo2.png">
+                        <div class="texto_artigo">
+                            O mundo dos minicontratos é uma grande porta de entrada para o day trade.
+                            Confira a seguir o guia definitivo sobre esses ativos!
+                        </div>
+                        <div class="saiba_mais">
+                            <div class="ajuste_saiba_mais"><a href="artigo1.html">Saiba mais &rarr;</a></div>
+                        </div>
+                    </div>
+                    <div class="recomendacoes">
+                        <img class="imagens_artigos" src="Imagens/artigo3.png">
+                        <div class="texto_artigo">
+                            Com a queda da Selic, muitas pessoas buscam novas opções de investimento.
+                            Entenda como começar a investir em Ações respeitando seu perfil e seus objetivos!
+                        </div>
+                        <div class="saiba_mais">
+                            <div class="ajuste_saiba_mais"><a href="artigo1.html">Saiba mais &rarr;</a></div>
+                        </div>
+                    </div>
+                    <div class="recomendacoes">
+                        <img class="imagens_artigos" src="Imagens/artigo9.png">
+                        <div class="texto_artigo">
+                            É fato que o mercado se move em tendências definidas nos mais variados Timeframes.
+                            Por isso, hoje vou falar das 4 formas que eu uso para identificar tendências no gráfico,
+                            baseado nos Princípios da Teoria de Dow, no meu dia a dia.
+                        </div>
+                        <div class="saiba_mais">
+                            <div class="ajuste_saiba_mais"><a href="">Saiba mais &rarr;</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="caixa_recomendacoes_3">
+                    <div class="recomendacoes">
+                        <img class="imagens_artigos" src="Imagens/artigo8.png">
+                        <div class="texto_artigo">
+                            Tape Reading e Análise Gráfica são dois métodos muito usados para o trading de curto prazo.
+                            Como saber qual a melhor técnica? Leia esse artigo para saber o que são e o que você
+                            deve considerar ao usar a leitura de fluxo ou a leitura gráfica!
+                        </div>
+                        <div class="saiba_mais">
+                            <div class="ajuste_saiba_mais"><a href="">Saiba mais &rarr;</a></div>
+                        </div>
+                    </div>
+                    <div class="recomendacoes">
+                        <img class="imagens_artigos" src="Imagens/2-1-1024x870.png">
+                        <div class="texto_artigo">
+                            Conheça como funciona o nosso forum e seja um membro ativo na comunidade,
+                            o conhecimento só é util quando esta em movimento. Então passe ele adiante...
+                        </div>
+                        <div class="saiba_mais">
+                            <div class="ajuste_saiba_mais"><a href="">Saiba mais &rarr;</a></div>
+                        </div>
+                    </div>
+                    <div class="recomendacoes">
+                        <img class="imagens_artigos" src="Imagens/artigo4.png">
+                        <div class="texto_artigo">
+                            Com a queda da Selic, muitas pessoas buscam novas opções de investimento.
+                            Entenda como começar a investir em Ações respeitando seu perfil e seus objetivos!
+                        </div>
+                        <div class="saiba_mais">
+                            <div class="ajuste_saiba_mais"><a href="">Saiba mais &rarr;</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    var ctx = chart.getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['setor 1', 'setor 2', 'setor 3', 'setor 4', 'setor 5', 'setor 6', 'setor 7', 'setor 8',
+                'setor 9', 'setor 10',
+            ],
+            datasets: [{
+                label: 'Histórico %',
+                data: [12, 19, 13, 15, 12, 13, 17, 13, 24, 18],
+                backgroundColor: [
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+    var usuario;
+    verificar_autenticacao();
+
+    // só mexer se quiser alterar o tempo de atualização
+    // ou se souber o que está fazendo!
+
+    function atualizacaoPeriodica() {
+        obterdadosporcaminhao(1);
+        obterdadosporcaminhao(2);
+        obterdadosporcaminhao(3);
+        obterdadosporcaminhao(4);
+        // setTimeout(atualizacaoPeriodica, 5000);
+    }
+
+
+
+    function obterdadosporcaminhao(idcaminhao) {
+        //aguardar();
+        fetch(`/leituras/tempo-real/${idcaminhao}`)
+            .then(resposta => {
+
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        // aqui, após registro. use os nomes
+                        // dos atributos que vem no JSON
+                        var dados = {
+                            temperatura: resposta.temperatura,
+                            umidade: resposta.umidade
+                        }
+
+                        alertar(resposta.temperatura, resposta.umidade, idcaminhao);
+                        atualizarTela(dados, idcaminhao);
+                    });
+                } else {
+
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do caminhao p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function alertar(temperatura, umidade, idcaminhao) {
+        // padrão para meu alerta
+        var limites = {
+            max_temperatura: 40,
+            min_temperatura: 20,
+            max_umidade: 80,
+            min_umidade: 50,
+        };
+
+        // zerar aviso de mensagem
+        var mensagem_temperatura = '';
+        var mensagem_umidade = '';
+        var classe_temperatura = 'alerta';
+        var classe_umidade = 'alerta_umidd';
+
+        // comparando
+        if (temperatura > limites.max_temperatura) {
+            mensagem_temperatura += 'Temperatura alta demais! <br>';
+            classe_temperatura = 'alerta alerta-alto';
+        }
+        if (umidade > limites.max_umidade) {
+            mensagem_umidade += 'Umidade alta demais! <br>';
+            classe_umidade = 'alerta_umidd alerta-alto';
+        }
+        if (temperatura < limites.min_temperatura) {
+            mensagem_temperatura = 'Temperatura baixa demais! <br>';
+            classe_temperatura = 'alerta alerta-baixo';
+        }
+        if (umidade < limites.min_umidade) {
+            mensagem_umidade = 'Umidade baixa demais! <br>';
+            classe_umidade = 'alerta_umidd alerta-baixo';
+        }
+
+        // escolhendo qual alterar
+        var div_temperatura_alterar
+        var div_umidade_alterar
+
+        if (idcaminhao == 1) {
+            div_temperatura_alterar = div_alerta_temperatura
+            div_umidade_alterar = div_alerta_umidade
+        } else if (idcaminhao == 2) {
+            div_temperatura_alterar = div_alerta_temperatura2
+            div_umidade_alterar = div_alerta_umidade2
+        } else if (idcaminhao == 3) {
+            div_temperatura_alterar = div_alerta_temperatura3
+            div_umidade_alterar = div_alerta_umidade3
+        } else if (idcaminhao == 4) {
+            div_temperatura_alterar = div_alerta_temperatura4
+            div_umidade_alterar = div_alerta_umidade4
+        }
+
+        // alterando
+        div_temperatura_alterar.innerHTML = mensagem_temperatura;
+        div_temperatura_alterar.className = classe_temperatura;
+
+        div_umidade_alterar.innerHTML = mensagem_umidade;
+        div_umidade_alterar.className = classe_umidade;
+    }
+
+    // só altere aqui se souber o que está fazendo!
+    function atualizarTela(dados, idcaminhao) {
+        console.log('iniciando atualização da tela...');
+
+        // escolhendo qual alterar
+        var div_temperatura_alterar
+        var div_umidade_alterar
+
+        if (idcaminhao == 1) {
+            div_temperatura_alterar = div_temperatura
+            div_umidade_alterar = div_umidade
+        } else if (idcaminhao == 2) {
+            div_temperatura_alterar = div_temperatura2
+            div_umidade_alterar = div_umidade2
+        } else if (idcaminhao == 3) {
+            div_temperatura_alterar = div_temperatura3
+            div_umidade_alterar = div_umidade3
+        } else if (idcaminhao == 4) {
+            div_temperatura_alterar = div_temperatura4
+            div_umidade_alterar = div_umidade4
+        }
+
+        div_temperatura_alterar.innerHTML = `Temperatura: ${dados.temperatura}º`;
+
+        div_umidade_alterar.innerHTML = `Umidade: ${dados.umidade}%`;
+
+
+
+    }
+
+
+    function sendData() {
+        var http = new XMLHttpRequest();
+        http.open('GET', 'http://localhost:9001/api/sendData', false);
+        http.send(null);
+    }
+
+    // Descomente abaixo se quiser inserir dados a cada X segundos
+
+    setInterval(() => {
+        sendData();
+    }, 5000);
+</script>

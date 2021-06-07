@@ -1,0 +1,57 @@
+-- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
+-- Você precisa executar os comandos no banco de dados para criar as tabelas,
+-- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
+
+/* para sql server - remoto - produção */
+
+CREATE TABLE leitura (
+	id INT IDENTITY,
+	temperatura DECIMAL,
+	umidade DECIMAL,
+	momento DATETIME,
+	fkcaminhao INT
+);
+
+CREATE TABLE usuario (
+	id INT IDENTITY,
+	nome VARCHAR(50),
+	login VARCHAR(50),
+	senha VARCHAR(50)
+);
+
+CREATE TABLE publicacao (
+	id INT IDENTITY,
+    descricao VARCHAR(100),
+	fkUsuario INT
+);
+
+/* para workbench - local - desenvolvimento */
+
+create database enviaDados;
+
+use enviaDados;
+
+CREATE TABLE leitura (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	temperatura DECIMAL,
+	umidade DECIMAL,
+	momento DATETIME,
+	fkcaminhao INT
+);
+
+CREATE TABLE usuarios (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(50),
+    apelido VARCHAR(50),
+    cpf varchar(15),
+    telefone varchar (20),
+	email VARCHAR(50),
+	senha VARCHAR(20)
+);
+
+CREATE TABLE publicacoes (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    descricao VARCHAR(100),
+	fkUsuario INT,
+    fkArtigo INT
+);

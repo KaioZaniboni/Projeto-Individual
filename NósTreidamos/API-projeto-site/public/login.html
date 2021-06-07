@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto IoT - Sobre</title>
+    <link rel="stylesheet" href="CSS/geral.css">
+    <link rel="stylesheet" href="css/cadastro_login.css">
+</head>
+
+<body>
+    <div class="corpo_cabecalho">
+        <div class="caixa_cabecalho">
+            <a class="logo_cabecalho" href="index.html">
+                <img class="img_tradamus" src="Imagens/tradamus.png" alt="">
+                <div class="ajuste_logo"> <span>Nós</span>Treidamos</div>
+            </a>
+            <nav class="caixa_menu">
+                <ul class="cabecalho_menu">
+                    <li><a href="index.html"> Home</a></li>
+                    <li><a href="sobre.html"> Sobre Nós </a></li>
+                    <li><a href="conteudo.html"> Conteúdo </a></li>
+                </ul>
+                <ul class="cabecalho_button">
+                    <button class="button_cabecalho"><a href="login.html"> Entrar </a></button>
+                    <button class="button_cabecalho"><a href="cadastro.html"> Cadastre-se </a></button>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="corpo_login">
+        <div class="corpo_cadastro_login">
+
+            <div class="menus">
+
+                <div id="menu_cadastro" class="cadastro">
+                    <div class="caixa_menu_cadastro_login">
+                        <div class="titulo_cadastro">Ola!</div>
+                        <div class="texto_menu">
+                            Insira os seus dados pessoais e comece a sua jornada conosco
+                        </div>
+                        <a href="cadastro.html"><button class="button_menu" onclick="sign_up()">Cadastre-se</button></a>
+                    </div>
+                </div>
+            </div>
+ 
+            <div id="formulario_login" class="caixa_login">
+                <div class="titulo_login">Faça o seu login</div>
+                <form id="form_login" class="form_login" method="post" onsubmit="return entrar()">
+                    <div class="ajuste_login_1">
+                        Usuário:<input type="text" name="email_html" placeholder="Digite seu e-mail de usuário" required minlength="4">
+                    </div>
+                    <div class="ajuste_login_2">
+                        Senha:<input type="password" name="senha" placeholder="***************" required minlength="4">
+                    </div>
+                    <div class="ajuste_login_3"><a href="senha.html">Esqueceu a sua senha?</a></div>
+                    <button id="btn_entrar" class="button_login">Entrar</button>
+                </form>
+                <div class="extra">
+                    <div id="div_erro" class="msg_erro">
+                    </div>
+                    <img src="aguarde-orange.gif" id="img_aguarde"> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="corpo_rodape">
+        <div class="caixa_rodape">
+            <img class="img_rodape" src="Imagens/tradamus.png" alt="">
+            <div class="ajuste_rodape">
+                ©NósTreidamos 2021. Todos direitos reservados.
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+
+    function entrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.email;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    sessionStorage.id_usuario_meuapp = json.id;
+
+                    window.location.href = 'conteudo_1_validado.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.visibility = 'visible';
+        div_erro.style.visibility = 'hidden';
+    }
+
+    function finalizar_aguardar(resposta) {
+        btn_entrar.disabled = false;
+        img_aguarde.style.visibility = 'hidden';
+        div_erro.style.visibility = 'visible';
+        div_erro.innerHTML = resposta;
+    }
+</script>

@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 110vw;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: rgb(239, 239, 239);
+}
+
+/* CABEÇALHO */
+.corpo_menu {
+    background-color: rgb(0, 24, 57, 0.9);
+    border-right: 3px solid orangered;
+    width: 5%;
+    height: 100%;
+    position: fixed;
+}
+.separacao {
+    margin-top: 3vw;
+}
+.imagens_menu {
+    width: 3vw;
+    margin: 1.5vw 1vw;
+}
+.imagem_perfil {
+    border: solid 1px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
+}
+.usuario {
+    width: 75%;
+    margin: 1vw auto;
+    display: flex;
+    align-items: center;
+    font-size: 2vw;
+}
+.usuario h2 {
+    font-weight: 100;
+}
+/* FIM CABEÇALHO */
+
+/* INICIO CONTEUDO */
+.corpo_conteudo {
+    position: relative;
+    float: right;
+    width: 95%;
+}
+
+.corpo_cabecalho {
+    position: relative;
+    height: 100px;
+    width: 100%;
+}
+
+/* INICIO CSS CONTEUDO 1 */
+.conteudo_1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    height: 8vw;
+    width: 90%;
+    bottom: 0%;
+    padding: 1vw 0vw;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
+}
+.display_ativo {
+    position: relative;
+    height: 7vw;
+    width: 20%;
+    border: solid 1px white;
+    margin: 0.4vw 1.3vw;
+    background-color: rgb(0, 24, 57, 0.9);
+    border: 2px solid tomato;
+    border-radius: 20px;
+    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
+}
+
+.display_linha_1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 1vw 2vw;
+    font-size: 1.2vw;
+    color: white;
+}
+.display_linha_2 {
+    text-align: center;
+    margin: 1.5vw;
+    font-size: 1.5vw;
+    color: white;
+}
+
+.conteudo_2 {
+    text-align: center;
+    margin: 4vw auto;
+    width: 90%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
+}
+
+.conteudo_3 {
+    position: relative;
+    height: 40vw;
+    width: 90%;
+    background-color: white;
+    margin: 5vw auto;
+    border-radius: 20px;
+    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
+}
+.titulo_recomendacao {
+    font-size: 2vw;
+    text-decoration: underline;
+    text-align: center;
+    padding: 2vw 0vw 3vw;
+    color: rgb(0, 24, 57, 0.9);
+    font-weight: 900;
+}
+.caixa_recomendacoes_1 {
+    display: flex;
+    justify-content: center;
+    height: 75%;
+    width: 100%;
+}
+.caixa_recomendacoes_2 {
+    justify-content: center;
+    height: 75%;
+    width: 100%;
+    display: none;
+}
+.caixa_recomendacoes_3 {
+    justify-content: center;
+    height: 75%;
+    width: 100%;
+    display: none;
+}
+.recomendacoes {
+    position: relative;
+    height: 100%;
+    width: 26%;
+    margin: 0vw 2.5vw;
+}
+.imagens_artigos {
+    width: 22vw;
+    height: 14vw;
+    border-radius: 10px;
+    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
+}
+.texto_artigo {
+    text-align: justify;
+    font-size: 1.3vw;
+    margin: 1vw;
+}
+.saiba_mais {
+    position: absolute;
+    margin: 0vw 1vw;
+    bottom: 3%;
+    font-size: 1.1vw;
+}
+/* FIM CSS CONTEUDO 1 */
