@@ -196,6 +196,7 @@ a {
 }
 
 .publicacao {
+    height: 3vw;
     background-color: white;
     margin: 0 auto;
     width: 50%;

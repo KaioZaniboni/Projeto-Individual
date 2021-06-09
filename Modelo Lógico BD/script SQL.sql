@@ -1,4 +1,6 @@
-use teste;
+create database nostreidamos;
+
+use nostreidamos;
 
 CREATE TABLE usuarios (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -27,22 +29,11 @@ CREATE TABLE indice (
     volume_1_minuto decimal
 );
 
-
-
 select * from publicacoes;
 select * from usuarios;
 select * from indice;
 
 
-
-drop table publicacoes;
-drop table indice;
-drop table usuarios;
-
-
-
 select round(avg(DATEDIFF(date_format(now(),'%Y-%m-%d'),data_nascimento))/365) as idade from usuarios;
-
 select min(round(DATEDIFF(date_format(now(),'%Y-%m-%d'),data_nascimento)/365)) as idade from usuarios;
-
 select max(round(DATEDIFF(date_format(now(),'%Y-%m-%d'),data_nascimento)/365)) as idade from usuarios;
