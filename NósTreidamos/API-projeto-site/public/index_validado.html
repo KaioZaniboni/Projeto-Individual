@@ -26,18 +26,14 @@
                         <li><a href="sobre_validado.html"> Sobre Nós</a></li>
                         <li><a href="conteudo_1_validado.html"> Conteúdo </a></li>
                     </ul>
-                    <!-- <ul class="cabecalho_button">
-                        <button class="button_cabecalho"><a href="login.html"> Entrar </a></button>
-                        <button class="button_cabecalho"><a href="cadastro.html"> Cadastre-se </a></button>
-                    </ul> -->
                     <div class="usuario">
-                        <img class="imagens_menu imagem_perfil" src="Imagens/sem foto.png">
+                        <img id="perfil" class="imagens_menu imagem_perfil" src="Imagens/sem foto.png">
                         <div>Olá, <b id="b_usuario"></b></div>
                         <div class="dropdown">
                             <img class="drop_down dropbtn" src="Imagens/down-arrow.png">
                             <div class="dropdown-content">
                                 <a href="dashboard.html">Plataforma</a>
-                                <a href="#">Link 2</a>
+                                <a href="publicacoes.html">Perfil</a>
                                 <a href="#" onclick="logoff()">Sair</a>
                             </div>
                         </div>
@@ -288,7 +284,6 @@
 
 </html>
 <script>
-    var usuario;
     verificar_autenticacao();
 
     function quadro_ativos() {
@@ -326,11 +321,13 @@
         percent_itub4, percent_btow3, percent_lwsa3
     ];
     var vetor_ativos_volumes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
     var vetor_div_volumes = [volume_bitcoin, volume_bbas3, volume_vale5, volume_petr4, volume_zani3, volume_petz3,
         volume_ninj3, volume_abev3, volume_lame4, volume_bbdc4, volume_vvar3, volume_suzb3, volume_itub4,
         volume_btow3,
         volume_lwsa3
     ];
+    var vetor_volume = [];
 
     function variacao_preco() {
         for (var ativo = 1; ativo <= vetor_preco_antigo.length; ativo++) {
@@ -345,8 +342,7 @@
                 vetor_ativos_precos[ativo - 1] += (vetor_ativos_precos[ativo - 1] * diferenca) :
                 vetor_ativos_precos[ativo - 1] -= (vetor_ativos_precos[ativo - 1] * diferenca);
 
-            div_percent_display[ativo - 1].innerHTML =
-                `${(((diferenca - vetor_preco_antigo[ativo - 1]) / diferenca) *100).toFixed(2)}%`;
+            div_percent_display[ativo - 1].innerHTML = `${(((diferenca - vetor_preco_antigo[ativo - 1]) / diferenca) *100).toFixed(2)}%`;
             div_preco_display[ativo - 1].innerHTML = `R$ ${vetor_ativos_precos[ativo - 1].toFixed(2)}`;
 
             vetor_ativos_volumes[ativo - 1] += Number(adicionar_volume);
@@ -359,5 +355,5 @@
             }
         }
     }
-    setInterval(variacao_preco, 2000);
+    setInterval(variacao_preco, 2000);    
 </script>

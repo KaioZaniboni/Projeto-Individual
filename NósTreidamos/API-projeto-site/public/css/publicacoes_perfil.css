@@ -1,0 +1,141 @@
+
+/* dashboard */
+
+.dashboard {
+    background-color: #ecf0f1;
+    text-align: center;
+    padding: 50px 0;
+    width: 80%;
+    height: 65%;
+    margin: auto;
+}
+
+.dashboard h1 {
+    margin-bottom: 40px;
+}
+
+.dashboard .textarea-padrao {
+    resize: none;
+    display: inline-block;
+}
+
+.box-login {
+    display: inline-block;
+    background-color: white;
+    box-shadow:  3px 3px 5px 2px #ccc;
+    padding: 60px 20px 0px 20px;
+    border-radius: 20px;
+    width: 400px;
+}
+
+.dashboard .btn-green {
+    display: block;
+    float: none;
+    margin: 20px auto;
+
+    color: white;
+    background-color: green;
+    border: 0;
+    padding: 10px 20px;
+
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botoes {
+    margin: auto;
+    margin-bottom: 40px;
+    display: block; /* Default de botão é inline-block. Com block, margin auto funciona*/
+}
+
+.btn {
+    color: white;
+    text-transform: uppercase;
+    width: 180px;
+    margin: 0 1%;
+    border: 5px solid #ecf0f1;
+    height: 38px;
+    padding: 0 20px;
+    cursor: pointer;
+    background-color: rgb(255, 164, 131);
+}
+
+.btn-now {
+    border: 3px solid #232323;
+    background-color: orangered;
+}
+
+
+.extra .msg_erro {
+    background-color: sandybrown; 
+    color: black; 
+    visibility: hidden;
+}
+
+.card {
+    border: 1px solid red;
+    border-radius: 10px;
+    display: block;
+    width: 35%;
+    margin: 10px 7%;
+    height: 160px;
+    float: left;
+    text-align: center;
+
+    background-color: white;
+    box-shadow:  3px 3px 5px 2px #ccc;
+    
+}
+
+/* extra */
+
+.publicacao {
+    background-color: white;
+    margin: 0 auto;
+    width: 50%;
+    display: block;
+    border: 1px solid rgb(255, 95, 37);
+    border-radius: 5px;
+    padding: 5px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.nome {
+    float:left;
+    color:rgb(255, 95, 37);
+    font-weight: bold;
+    /* border: 1px solid rgb(255, 95, 37); */
+}
+
+.descricao {
+    height: auto;
+    width: auto;
+    margin-left: 13%;
+}
+.usuario_perfil {
+    height: 45vw;
+    width: 95%;
+    float: right;
+}
+.foto_perfil {
+    height: 25vw;
+    width: 25vw;
+    border-radius: 50%;
+}
+#b_usuario {
+    margin: 2vw 0vw;
+    font-size: 3vw;
+}
+.div_menu {
+    display: flex;
+    width: 60%;
+    height: 10vw;
+    margin: 2vw auto;
+}
+.img_menu {
+    height: 4vw;
+    width: 4vw;
+    margin: 2vw 3.5vw;
+    cursor: pointer;
+}

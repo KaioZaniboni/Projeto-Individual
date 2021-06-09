@@ -123,6 +123,7 @@ ul li a:hover {
     cursor: pointer;
 }
 .imagem_perfil {
+    height: 3vw;
     border: solid 1px;
     background-color: white;
     border-radius: 20px;
@@ -183,18 +184,15 @@ ul li a:hover {
     border-top-right-radius: 20px;
     box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
 }
-
 .caixa_rodape {
     position: relative;
     height: 100%;
     width: 100%;
 }
-
 .ajuste_rodape {
     margin-top: 1vw;
     color: white;
 }
-
 .img_rodape {
     width: 3.5vw;
     margin-top: 2vw;

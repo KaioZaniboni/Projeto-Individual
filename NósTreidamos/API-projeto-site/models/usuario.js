@@ -21,17 +21,22 @@ module.exports = (sequelize, DataTypes) => {
 		apelido: {
 			field: 'apelido',
 			type: DataTypes.STRING,
-			allowNull: true
+			allowNull: false
 		},
 		cpf: {
 			field: 'cpf',
 			type: DataTypes.STRING,
-			allowNull: true
+			allowNull: false
+		},
+		data_nascimento: {
+			field: 'data_nascimento',
+			type: DataTypes.DATEONLY,
+			allowNull: false
 		},
 		telefone: {
 			field: 'telefone',
 			type: DataTypes.STRING,
-			allowNull: true
+			allowNull: false
 		},
 		email: {
 			field: 'email',
@@ -40,6 +45,11 @@ module.exports = (sequelize, DataTypes) => {
 		},
 		senha: {
 			field: 'senha',
+			type: DataTypes.STRING,
+			allowNull: false
+		},
+		foto: {
+			field: 'foto',
 			type: DataTypes.STRING,
 			allowNull: false
 		}

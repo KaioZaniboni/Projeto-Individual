@@ -13,7 +13,7 @@
     <div class="corpo_cabecalho">
         <div class="caixa_cabecalho">
             <a class="logo_cabecalho" href="index.html">
-                <img class="img_tradamus" src="Imagens/tradamus.png" alt="">
+                <img class="img_tradamus" src="Imagens/tradamus.png">
                 <div class="ajuste_logo"> <span>Nós</span>Treidamos</div>
             </a>
             <nav class="caixa_menu">
@@ -39,7 +39,7 @@
                     <div class="caixa_menu_cadastro_login">
                         <div class="titulo_cadastro">Bem Vindo!</div>
                         <div class="texto_menu">
-                            para se conectar conosco, faça o login com suas informações de usuário
+                            para se conectar conosco, faça o login com suas informações de usuário.
                         </div>
                         <a href="login.html"><button class="button_menu" onclick="sign_in()">Login</button></a>
                     </div>
@@ -49,17 +49,45 @@
             <div id="formulario_cadastro" class="caixa_cadastro">
                 <div class="titulo_login">Faça o seu cadastro</div>
                 <form id="form_cadastro" class="form_cadastro" method="post" onsubmit="return cadastrar()">
-                    <div class="input_nome">Nome completo:<input type="text" name="nome" autofocus="autofocus"
-                            placeholder="Nome e sobrenome" required minlength="4"></div>
-                    <div class="input_email">E-mail:<input type="text" name="email_html"
-                            placeholder="Digite seu e-mail de usuário" required minlength="4"></div>
-                    <div class="input_senha">Senha:<input type="password" name="senha" placeholder="***************"
-                            required minlength="4"></div>
-                    <div class="input_senha">Confirme sua Senha:<input type="password" placeholder="***************"
-                            required minlength="4"></div>
-                    <button type="submit" id="btn_entrar" class="button_login">Cadastrar</button>
+                    <div id="form_cadastro_1" class="form_cadastro_1">
+                        <div class="input_padrao">Nome completo:<input type="text" name="nome" autofocus="autofocus"
+                                placeholder="Digite seu nome completo" required minlength="4"></div>
+                        <div class="input_padrao">E-mail:<input type="text" name="email_html" 
+                                placeholder="Digite seu e-mail de usuário" required minlength="4"></div>
+                        <div class="input_padrao">Apelido:
+                            <input type="text" name="user_name" 
+                                placeholder="Digite aqui como deseja ser chamado" required minlength="4">
+                        </div>
+                        <div class="input_padrao">CPF:
+                            <input type="text" name="cpf" placeholder="xxx.xxx.xxx.-xx" required
+                                minlength="11">
+                        </div>
+                        <button id="passo_1" class="button_login" onclick="alterar_passo_1()">Passo 1/3</button>
+                    </div>
+                    <div id="form_cadastro_2" class="form_cadastro_3">
+                        <div class="moldura_foto">
+                        <img class="foto" id="foto_perfil" src="https://www.socialdub.com/profilepictures/205076/2050760159395408.jpg?x2">
+                        </div>
+                        <input id="input_foto" onchange="perfil()" name="foto" type="text" placeholder="Insira o link de uma foto para usar em seu perfil">
+                        <button id="passo_2" class="button_login" onclick="alterar_passo_2()">Passo 2/3</button>
+                    </div>
+                    <div id="form_cadastro_3" class="form_cadastro_2">
+                        <div class="input_padrao">Data de Nascimento:
+                            <input id="intp_data" type="date" name="data_nascimento" required>
+                        </div>
+                        <div class="input_padrao">Telefone:
+                            <input id="inpt_telefone" type="text" name="telefone" placeholder="(099) 99999-9999"
+                                required minlength="11">
+                        </div>
+                        <div class="input_senha">Senha:<input type="password" name="senha" placeholder="***************"
+                                required minlength="4"></div>
+                        <div class="input_senha">Confirme sua Senha:<input type="password" placeholder="***************"
+                                required minlength="4"></div>
+                        <button type="submit" id="btn_entrar" class="button_login">Cadastrar</button>
+                    </div>
+
                 </form>
-                <img src="aguarde-orange.gif" id="img_aguarde" style="display: none; width:100px">
+                <img src="aguarde.gif" id="img_aguarde" style="display: none; width:100px">
                 <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
                     Erro no cadastro
                 </div>
@@ -69,7 +97,7 @@
 
     <div class="corpo_rodape">
         <div class="caixa_rodape">
-            <img class="img_rodape" src="Imagens/tradamus.png" alt="">
+            <img class="img_rodape" src="Imagens/tradamus.png">
             <div class="ajuste_rodape">
                 ©NósTreidamos 2021. Todos direitos reservados.
             </div>
@@ -80,6 +108,22 @@
 </html>
 
 <script>
+    function alterar_passo_1() {
+            form_cadastro_1.style.display = 'none';
+            form_cadastro_2.style.display = 'block';
+            form_cadastro_3.style.display = 'none';
+    }
+    function alterar_passo_2() {
+            form_cadastro_1.style.display = 'none';
+            form_cadastro_2.style.display = 'none';
+            form_cadastro_3.style.display = 'block';
+    }
+
+    function perfil() {
+        foto_perfil.src = input_foto.value;
+    }
+
+
     function cadastrar() {
         aguardar();
         var formulario = new URLSearchParams(new FormData(form_cadastro));
@@ -89,7 +133,7 @@
         }).then(function (response) {
 
             if (response.ok) {
-
+                alert('Cadastro finalizado com sucesso!')
                 window.location.href = 'login.html';
 
             } else {
@@ -101,7 +145,6 @@
                 finalizar_aguardar();
             }
         });
-
         return false;
     }
 

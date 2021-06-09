@@ -23,6 +23,7 @@ body {
     margin: 1.5vw 1vw;
 }
 .imagem_perfil {
+    height: 3vw;
     border: solid 1px;
     background-color: white;
     border-radius: 20px;
@@ -67,7 +68,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
 }
-.display_ativo {
+.display2_ativo {
     position: relative;
     height: 7vw;
     width: 20%;
@@ -79,21 +80,21 @@ body {
     box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
 }
 
-.display_linha_1 {
+.display2_linha_1 {
     display: flex;
     justify-content: space-between;
     margin: 1vw 2vw;
     font-size: 1.2vw;
     color: white;
 }
-.display_linha_2 {
+.display2_linha_2 {
     text-align: center;
     margin: 1.5vw;
     font-size: 1.5vw;
     color: white;
 }
-
 .conteudo_2 {
+    position: relative;
     text-align: center;
     margin: 4vw auto;
     width: 90%;
@@ -101,6 +102,11 @@ body {
     border-radius: 20px;
     box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
 }
+
+
+
+
+
 
 .conteudo_3 {
     position: relative;
@@ -161,3 +167,64 @@ body {
     font-size: 1.1vw;
 }
 /* FIM CSS CONTEUDO 1 */
+
+
+
+
+
+.conteudo_2_3 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 8vw;
+    width: 100%;
+    bottom: 0%;
+    padding: 1vw 0;
+}
+.conteudo_2_4 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 8vw;
+    width: 100%;
+    bottom: 0%;
+    padding: 1vw 0;
+}
+.conteudo_2_5 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 8vw;
+    width: 100%;
+    bottom: 0%;
+    padding: 1vw 0;
+}
+.display_ativo {
+    position: relative;
+    height: 7vw;
+    width: 14%;
+    border: solid 2px tomato;
+    margin: 0 5px;
+    background-color: rgb(0, 24, 57, 0.9);
+    border-radius: 20px;
+    color: white;
+}
+.display_linha_1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 1vw;
+    font-size: 1.2vw;
+}
+.display_linha_2 {
+    text-align: left;
+    margin-left: 1vw;
+    font-size: 1.5vw;
+
+}
+.display_linha_3 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1vw;
+    font-size: 0.9vw;
+    color: rgb(150, 150, 150);
+}

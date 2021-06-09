@@ -34,12 +34,11 @@
         <div class="corpo_cadastro_login">
 
             <div class="menus">
-
                 <div id="menu_cadastro" class="cadastro">
                     <div class="caixa_menu_cadastro_login">
                         <div class="titulo_cadastro">Ola!</div>
                         <div class="texto_menu">
-                            Insira os seus dados pessoais e comece a sua jornada conosco
+                            Insira os seus dados pessoais e comece a sua jornada conosco.
                         </div>
                         <a href="cadastro.html"><button class="button_menu" onclick="sign_up()">Cadastre-se</button></a>
                     </div>
@@ -61,7 +60,7 @@
                 <div class="extra">
                     <div id="div_erro" class="msg_erro">
                     </div>
-                    <img src="aguarde-orange.gif" id="img_aguarde"> 
+                    <img src="aguarde.gif" id="img_aguarde"> 
                 </div>
             </div>
         </div>
@@ -94,8 +93,9 @@
                 resposta.json().then(json => {
 
                     sessionStorage.login_usuario_meuapp = json.email;
-                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    sessionStorage.apelido_usuario_meuapp = json.apelido;
                     sessionStorage.id_usuario_meuapp = json.id;
+                    sessionStorage.foto_usuario_meuapp = json.foto;
 
                     window.location.href = 'conteudo_1_validado.html';
                 });

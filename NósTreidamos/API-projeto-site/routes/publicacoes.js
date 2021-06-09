@@ -8,12 +8,12 @@ router.post('/publicar/:idUsuario', function(req, res, next) {
     console.log("Iniciando Publicação...")
     
 	let idUsuario = req.params.idUsuario;
-    let idArtigo = 1;
+    let artigo = 1;
 
     Publicacao.create({
         descricao: req.body.descricao,
         fkUsuario: idUsuario,
-        fkArtigo: idArtigo
+        artigo: artigo
     }).then(resultado => {
         console.log("Post realizado com sucesso!!");
         res.send(resultado);
@@ -33,7 +33,7 @@ router.get('/', function(req, res, next) {
     descricao
     FROM publicacoes
     INNER JOIN usuarios
-    ON publicacoes.fkUsuario = Usuarios.id WHERE fkArtigo = 1
+    ON publicacoes.fkUsuario = Usuarios.id WHERE artigo = 1
     ORDER BY publicacoes.id DESC`;
 
 	sequelize.query(instrucaoSql, {

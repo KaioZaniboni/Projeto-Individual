@@ -11,6 +11,8 @@ var leiturasRouter = require('./routes/leituras');
 var publicacoesRouter = require('./routes/publicacoes');
 var publicacoes2Router = require('./routes/publicacoes2');
 var publicacoes3Router = require('./routes/publicacoes3');
+var publicacoes_perfilRouter = require('./routes/publicacoes_perfil');
+var indiceRouter = require('./routes/indice');
 
 var app = express();
 
@@ -26,5 +28,7 @@ app.use('/leituras', leiturasRouter);
 app.use('/publicacoes', publicacoesRouter);
 app.use('/publicacoes2', publicacoes2Router);
 app.use('/publicacoes3', publicacoes3Router);
+app.use('/publicacoes_perfil', publicacoes_perfilRouter);
+app.use('/indice', indiceRouter); 
 
 module.exports = app;

@@ -104,17 +104,42 @@
     position: relative;
     text-align: center;
     margin: auto;
-    top: 10%;
     height: 60%;
     width: 85%;
     font-size: 1.3vw;
 }
-.input_nome {
-    display: flex;
-    justify-content: space-between;
-    margin: 1.3vw 0;
+.form_cadastro_1 {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    top: 10%;
+    height: 60%;
+    width: 85%;
+    font-size: 1.3vw;
+    display: block;
 }
-.input_email {
+.form_cadastro_2 {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    top: 10%;
+    height: 60%;
+    width: 85%;
+    font-size: 1.3vw;
+    display: none;
+}
+.form_cadastro_3 {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    top: 10%;
+    height: 60%;
+    width: 100%;
+    font-size: 1.3vw;
+    display: none;
+}
+
+.input_padrao {
     display: flex;
     justify-content: space-between;
     margin: 1.3vw 0;
@@ -127,4 +152,22 @@
 input {
     width: 50%;
 }
+.moldura_foto {
+    position: relative;
+    margin: 1vw auto 3vw;
+    height: 8vw;
+    width: 8vw;
+    border-radius: 50%;
+    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
+}
+.foto {
+    height: 8vw;
+    width: 8vw;
+    border-radius: 50%;
+}
+#input_foto {
+    width: 100%;
+}
+
+
 

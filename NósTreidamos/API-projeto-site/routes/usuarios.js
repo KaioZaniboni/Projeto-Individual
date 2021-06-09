@@ -44,8 +44,13 @@ router.post('/cadastrar', function(req, res, next) {
 	
 	Usuario.create({
 		nome : req.body.nome,
+		apelido: req.body.user_name,
+		cpf: req.body.cpf,
+		data_nascimento: req.body.data_nascimento,
+		telefone: req.body.telefone,
 		email : req.body.email_html,
-		senha: req.body.senha
+		senha: req.body.senha,
+		foto: req.body.foto
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
         res.send(resultado);
@@ -54,6 +59,9 @@ router.post('/cadastrar', function(req, res, next) {
 		res.status(500).send(erro.message);
   	});
 });
+
+
+
 
 /* Verificação de usuário */
 router.get('/sessao/:login', function(req, res, next) {

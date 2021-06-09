@@ -6,35 +6,40 @@ https://codewithhugo.com/sequelize-data-types-a-practical-guide/
 */
 
 module.exports = (sequelize, DataTypes) => {
-    let Publicacao = sequelize.define('Publicacao',{	
+    let Indice = sequelize.define('Indice',{	
 		id: {
 			field: 'id',
 			type: DataTypes.INTEGER,
 			primaryKey: true,
 			autoIncrement: true
 		},	
-        descricao: {
-            field: 'descricao',
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        fkUsuario: {
-            field: 'fkUsuario',
+        pontuacao: {
+            field: 'pontuacao',
             type: DataTypes.INTEGER,
             allowNull: false
         },
-		artigo: {
-            field: 'artigo',
+        variacao_percentual: {
+            field: 'variacao_percentual',
             type: DataTypes.INTEGER,
             allowNull: true
+        },
+        monetario_1_minuto: {
+            field: 'monetario_1_minuto',
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        volume_1_minuto: {
+            field: 'volume_1_minuto',
+            type: DataTypes.INTEGER,
+            allowNull: false
         }
 	}, 
 	{
-		tableName: 'publicacoes', 
+		tableName: 'indice', 
 		freezeTableName: true, 
 		underscored: true,
 		timestamps: false,
 	});
 
-    return Publicacao;
+    return Indice;
 };
